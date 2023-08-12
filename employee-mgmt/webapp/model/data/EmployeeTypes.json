@@ -1,0 +1,32 @@
+  
+    [ {
+      "key" : 0, 
+      "type": "Interno",
+      "docType" : "dni",
+      "description": "An intern is a recent graduate or student who is working for a company on a temporary basis.",
+      "defaultSalary": 24000,
+      "minSalary": 12000,
+      "maxSalary": 80000, 
+      "waers": "USD"
+    },
+    {
+      "key" : 1,   
+      "type": "Autónomo",
+      "docType": "cif",
+      "description": "Autonomous employees are self-directed and self-managed",
+      "defaultSalary": 400,
+      "minSalary": 100,
+      "maxSalary": 2000, 
+      "waers": "USD"
+    },
+    {
+      "key" : 2, 
+      "type": "Gerente",
+      "docType": "dni",
+      "description": "A manager is responsible for overseeing a team of employees.",
+      "defaultSalary": 70000,
+      "minSalary": 50000,
+      "maxSalary": 200000, 
+      "waers": "USD"
+    } 
+  ] 

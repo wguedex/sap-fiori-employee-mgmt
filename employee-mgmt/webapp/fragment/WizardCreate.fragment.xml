@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <Wizard
+        id="createEmployeeWizard"
+        class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+        complete="onWizardCompleted"
+    >
+        <core:Fragment
+            fragmentName="sapui5.com.employeemgmt.fragment.WizardStep1"
+            type="XML"
+        />
+        <core:Fragment
+            fragmentName="sapui5.com.employeemgmt.fragment.WizardStep2"
+            type="XML"
+        />
+        <core:Fragment
+            fragmentName="sapui5.com.employeemgmt.fragment.WizardStep3"
+            type="XML"
+        />
+    </Wizard>
+</core:FragmentDefinition>

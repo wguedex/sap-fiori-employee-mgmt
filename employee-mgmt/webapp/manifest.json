@@ -1,0 +1,146 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "sapui5.com.employeemgmt",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.10.3",
+      "toolsId": "62f22f7f-becd-428a-9d3b-f9195db00024"
+    },
+
+    "dataSources": {
+      "ZEMPLOYEES_SRV": {
+        "uri": "/sap/opu/odata/sap/ZEMPLOYEES_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.116.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sapui5.com.employeemgmt.i18n.i18n"
+        }
+      },
+      "DataEmployee": { 
+        "preload": true,
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/data/DataEmployee.json"
+      },
+      "EmployeeTypes": { 
+        "preload": true,
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/data/EmployeeTypes.json"
+      }, 
+      "DataEmployeeStates": {
+        "preload": true,
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/data/DataEmployeeStates.json"                
+      },
+      "employeeModels": {
+        "dataSource": "ZEMPLOYEES_SRV",
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "preload": true,
+        "settings": {
+          "useBatch": false,
+          "defaultBindingMode": "TwoWay"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+          "routerClass": "sap.m.routing.Router",
+          "viewType": "XML",
+          "async": true,
+          "viewPath": "sapui5.com.employeemgmt.view",
+          "controlAggregation": "pages",
+          "controlId": "app",
+          "clearControlAggregation": false
+      },
+      "routes": [
+          {
+              "pattern": "",
+              "name": "appRoute",
+              "target": "appTarget"
+          },
+          {
+              "pattern": "CreateEmployee",
+              "name": "CreateEmployeeRoute",
+              "target": "CreateEmployeeTarget"
+          } 
+      ],
+      "targets": {
+          "appTarget": {
+              "viewId": "appId",
+              "viewName": "App"
+          },
+          "CreateEmployeeTarget": {
+              "viewId": "CreateEmployeeId",
+              "viewName": "CreateEmployee"
+          }         
+      }
+  },
+    "rootView": {
+      "viewName": "sapui5.com.employeemgmt.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
+  }
+}

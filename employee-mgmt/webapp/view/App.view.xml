@@ -1,0 +1,59 @@
+<mvc:View
+   controllerName="sapui5.com.employeemgmt.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+ <Shell id="shellId">
+   <App id="app">
+      <pages>
+         <Page id="pageId" title="{i18n>homePageTitle}">
+            <content>
+               <Panel id="employeePanelId"
+							headerText="{i18n>employeePanelTitle}"
+                     expandable="true"
+                     expanded="true">
+                     <content> 
+                        <GenericTile id="createEmployeeTileId" 
+                                     class="sapUiTinyMarginBegin 
+                                            sapUiTinyMarginTop 
+                                            tileLayout"   
+                                     headerImage="sap-icon://add-employee"
+		                               press=".onCreateEmployee" 
+                                     frameType= "Auto"> 
+		                              <TileContent id="createEmployeeContentId" 
+                                                 footer="{i18n>createEmployee}"/>  
+	                     </GenericTile> 
+                        <GenericTile id="lookupEmployeeTileId" 
+                                     class="sapUiTinyMarginBegin 
+                                            sapUiTinyMarginTop 
+                                            tileLayout"   
+                                     headerImage="sap-icon://employee-lookup"
+		                               press=".onLookupEmployee" 
+                                     frameType= "Auto"> 
+		                              <TileContent id="lookupEmployeeContentId" 
+                                                 footer="{i18n>lookupEmployee}"/>  
+	                     </GenericTile>
+                     </content>
+               </Panel>  
+               <Panel id="salesOrderPanelId"
+							headerText="{i18n>salesOrderPanelTitle}"
+                     expandable="true"
+                     expanded="true">
+                     <content>  
+                        <GenericTile id="signSalesOrderTileId" 
+                                     class="sapUiTinyMarginBegin 
+                                            sapUiTinyMarginTop 
+                                            tileLayout"   
+                                     headerImage="sap-icon://signature"
+		                               press=".onSignSalesOrder" 
+                                     frameType= "Auto"> 
+		                              <TileContent id="signSalesOrderContentId" 
+                                                 footer="{i18n>signSalesOrder}"/>  
+	                     </GenericTile>                              
+                     </content>
+               </Panel>                   
+            </content>
+         </Page>
+      </pages>
+   </App>
+ </Shell>
+</mvc:View>

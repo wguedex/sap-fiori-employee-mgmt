@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <WizardStep
+        id="idWizardStep1"
+        title="{i18n>employeeType}"
+        validated="false"
+    >
+        <MessageStrip
+            id="messageStrip1"
+            class="sapUiSmallMarginBottom"
+            text="{i18n>messageStrip1}"
+            showIcon="true"
+        />
+        <HBox
+            id="hbox1"
+            alignItems="Center"
+            justifyContent="Center"
+            width="100%"
+        >
+            <SegmentedButton
+                id="segmentedButtonId"
+                width="320px"
+                items="{EmployeeTypes>/}"
+                selectionChange="setEmployeeType"
+            >
+                <items>
+                    <SegmentedButtonItem
+                        id="SegmBtnItemId"
+                        key="{EmployeeTypes>key}"
+                        text="{EmployeeTypes>type}"
+                        tooltip="{EmployeeTypes>description}"
+                    />
+                </items>
+            </SegmentedButton>
+        </HBox>
+    </WizardStep>
+</core:FragmentDefinition>

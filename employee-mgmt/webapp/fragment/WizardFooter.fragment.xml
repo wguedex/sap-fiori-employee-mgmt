@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Button  
+        text="{i18n>save}"
+        press=".onSaveEmployee"
+    />
+    <Button   
+        text="{i18n>cancel}"
+        press=".onCancelEmployee"
+    />
+</core:FragmentDefinition>
