@@ -123,7 +123,12 @@
               "pattern": "CreateEmployee",
               "name": "CreateEmployeeRoute",
               "target": "CreateEmployeeTarget"
-          } 
+          }, 
+          {
+            "pattern": "LookupEmployee",
+            "name": "LookupEmployeeRoute",
+            "target": ["LookupEmployeeTarget"]
+        }           
       ],
       "targets": {
           "appTarget": {
@@ -133,7 +138,14 @@
           "CreateEmployeeTarget": {
               "viewId": "CreateEmployeeId",
               "viewName": "CreateEmployee"
-          }         
+          }, 
+          "LookupEmployeeTarget": {
+            "viewId": "LookupEmployeeId",
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewName": "LookupEmployee"
+        }           
       }
   },
     "rootView": {

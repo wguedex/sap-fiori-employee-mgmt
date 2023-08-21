@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+>
+	<Page
+		id="idMasterPage" 
+		showFooter="false"
+        backgroundDesign="List"
+		showNavButton="true" 
+		navButtonPress=".onNavBack"
+	> 
+
+		<subHeader>
+			<Toolbar id="idToolbar">
+				<SearchField
+					id="idSearchField"
+					width="100%"
+					liveChange=".onSearch"
+				/>
+			</Toolbar>
+		</subHeader>
+        <List 
+            id="idUserList"
+            items="{ path: 'employeeModels>/Users',
+                        filters: [{
+                            path: 'SapId',
+                            operator: 'EQ',
+                            value1: 'jhon.wick@gmail.com'
+                        }]}"  >
+            <StandardListItem id="idStandardListItem"
+                title="{employeeModels>FirstName} {employeeModels>LastName}"
+                description="{employeeModels>Dni}"
+                icon=""
+                type="Active" 
+                press=".onNavToDetail"
+                />
+        </List>
+	</Page>
+</core:FragmentDefinition>

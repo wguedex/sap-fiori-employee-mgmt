@@ -1,0 +1,107 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:upload="sap.m.upload"
+	xmlns:c="sap.suite.ui.commons"
+>
+	<Page
+		id="idDetailPage"
+		showHeader="true"
+		title="Datos empleado"
+	>
+		<ObjectHeader
+			icon="sap-icon://employee"
+			title="{employeeModels>FirstName} {employeeModels>LastName}"
+			responsive="true"
+			class="sapUiResponsivePadding--header"
+		>
+			<ObjectAttribute text="{employeeModels>Dni}"/>
+		</ObjectHeader>
+		<IconTabBar
+			id="idIconTabBarMulti"
+			expanded="{device>/isNoPhone}"
+			class="sapUiResponsiveContentPadding"
+		>
+			<items>
+				<IconTabFilter
+					icon="sap-icon://attachment"
+					key="attachments"
+				>
+					<upload:UploadSet
+						id="idUploadSet"
+						instantUpload="true"
+						showIcons="true"
+						uploadEnabled="true"
+						terminationEnabled="true"
+						fileTypes="txt,doc,png"
+						maxFileNameLength="30"
+						maxFileSize="200"
+						mediaTypes="text/plain,application/msword,image/jpeg"
+						uploadUrl="/sap/opu/odata/sap/ZEMPLOYEES_SRV/Attachments" 
+						items="{employeeModels>UserToAttachment}"
+						beforeUploadStarts=".onBeforeUploadStarts" 
+						afterItemAdded=".onAfterItemAdded"   
+						afterItemRemoved=".onAfterItemRemoved"
+					>
+						<upload:items>
+							<upload:UploadSetItem
+								fileName="{employeeModels>DocName}"     
+							>
+							</upload:UploadSetItem>
+						</upload:items>
+					</upload:UploadSet>
+				</IconTabFilter>
+				<IconTabFilter
+					icon="sap-icon://currency"
+					key="historial"
+				>
+					<content>
+						<c:Timeline
+							id="idTimeline"
+							width="100%"
+							height="30rem"
+							alignment="Left"
+							enableDoubleSided="false"
+							groupByType="Year"
+							groupBy="CreationDate"
+							showHeaderBar="false"
+							content="{employeeModels>UserToSalary}"
+						>
+							<c:content>
+								<c:TimelineItem
+									icon="sap-icon://circle-task"
+									dateTime="{employeeModels>CreationDate}"
+									text="{employeeModels>Comments}"
+									userName="{
+										parts: [{
+											path: 'employeeModels>Amount'
+										}, {
+											path: 'employeeModels>Waers'
+										}],
+										type: 'sap.ui.model.type.Currency',
+										formatOptions: {
+											showMeasure: false
+										}
+									}"
+								/>
+							</c:content>
+						</c:Timeline>
+					</content>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					text="{i18n>btnDeleteEmployee}"
+					press=".onDeleteEmployee"
+				/>
+				<Button
+					text="{i18n>ascend}"
+					press=".onAscend"
+				/>
+			</Toolbar>
+		</footer>
+	</Page>
+</core:FragmentDefinition>

@@ -86,10 +86,11 @@ sap.ui.define(
         //Create employee  
         oEmployeesModel.create("/Users", oBody, {
           success: function (data) {
-
+             
+            let employeeId = data.UserToSalary.results[0].EmployeeId;
             //Assign EmployeeId to the 'DataEmployee' model 
-            this.getView().getModel("DataEmployee").setProperty("/employeeId", data.EmployeeId);
-
+            this.getView().getModel("DataEmployee").setProperty("/employeeId", employeeId);
+        
             //Load files to employeeModels
             this._oUploadSet.uploadFiles();
 

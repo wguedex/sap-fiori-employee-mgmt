@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+                         xmlns="sap.m">
+
+    <Dialog title="{i18n>newAscend}">
+        <content>
+            
+                    <VBox class="sapUiSmallMargin">
+                        <Label text="{i18n>newSalary}" labelFor="newSalary"/>
+                        <Input id="idSalary" 
+                               value="{parts: [{path: 'DataEmployee>/salary'}, 
+                                                {path: 'DataEmployee>/waers'}], 
+                                                type: 'sap.ui.model.type.Currency', 
+                                                formatOptions:{showMeasure:false}}"
+                               change=".onNewSalaryChange"/>
+                        <Label text="{i18n>date}" labelFor="newSalaryDate"/>
+                        <DatePicker id="idDatePicker"
+                                    dateValue="{path:'DataEmployee>/creationDate', type:'sap.ui.model.odata.type.Date'}"
+                                    change=".onNewSalaryDateChange"
+                                    valueState="{DataEmployeeStates>/creationDateState}"/>
+                        <Label text="{i18n>commentary}" 
+                               labelFor="employeeNewComments"/>
+                        <TextArea id="idComment.TextArea"
+                                  width="100%"
+                                  rows="{= ${device>/system/desktop} === true ? 3 : 5}"
+                                  showExceededText="true" 
+                                  maxLength="200"
+                                  value="{DataEmployee>/comment}" />
+                    </VBox>                    
+            
+        </content>
+        <beginButton>
+            <Button text="{i18n>btnAscendAccept}"
+                    press=".onSaveAscend"/>
+        </beginButton>
+        <endButton>
+            <Button text="{i18n>btnAscendCancel}"
+                    press=".onCancelAscend"/>
+        </endButton>
+    </Dialog>
+
+</core:FragmentDefinition>

@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+>
+	<Page id="idLandingPage"
+	showHeader="false">
+		<content>
+			<MessagePage 
+				showHeader="false"
+				enableFormattedText="true"
+				description="{i18n>selectEmployee}"
+				text=""
+				icon=""
+			/>
+		</content>
+	</Page>
+</core:FragmentDefinition>

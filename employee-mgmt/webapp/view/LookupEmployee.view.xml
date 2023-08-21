@@ -1,0 +1,19 @@
+<mvc:View
+	controllerName="sapui5.com.employeemgmt.controller.LookupEmployee"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m">
+    <SplitApp id="idSplitApp"
+		      initialMaster="MasterPage"
+              initialDetail="LandingPage" 
+              masterButtonText=" "> 
+        <masterPages>
+            <core:Fragment fragmentName="sapui5.com.employeemgmt.fragment.MasterPage" type="XML"/>
+		</masterPages>
+        <detailPages>
+            <core:Fragment fragmentName="sapui5.com.employeemgmt.fragment.LandingPage" type="XML"/> 
+            <core:Fragment fragmentName="sapui5.com.employeemgmt.fragment.DetailPage" type="XML"/> 
+        </detailPages>
+    </SplitApp>
+</mvc:View>

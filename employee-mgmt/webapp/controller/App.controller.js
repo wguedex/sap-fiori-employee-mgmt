@@ -15,10 +15,10 @@ sap.ui.define(
         let oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("CreateEmployeeRoute");
       },       
-
+      
       onLookupEmployee: function (oEvent) {
-        // let oRouter = this.getOwnerComponent().getRouter();
-        // oRouter.navTo("LookupEmployeeRoute");
+        let oRouter = this.getOwnerComponent().getRouter();
+        oRouter.navTo("LookupEmployeeRoute");
       },             
 
     });
