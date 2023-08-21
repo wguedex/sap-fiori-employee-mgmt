@@ -16,6 +16,15 @@
 			class="sapUiResponsivePadding--header"
 		>
 			<ObjectAttribute text="{employeeModels>Dni}"/>
+			<ObjectAttribute
+				title="{i18n>employeeType}"
+				text="{= ${employeeModels>Type} === '0' ? ${i18n>intern} 
+					: ${employeeModels>Type} === '1' ? ${i18n>autonomous} : ${i18n>manager} }"
+			/>
+			<ObjectAttribute
+				title="{i18n>commentary}"
+				text="{employeeModels>Comments}"
+			/>
 		</ObjectHeader>
 		<IconTabBar
 			id="idIconTabBarMulti"
@@ -37,17 +46,14 @@
 						maxFileNameLength="30"
 						maxFileSize="200"
 						mediaTypes="text/plain,application/msword,image/jpeg"
-						uploadUrl="/sap/opu/odata/sap/ZEMPLOYEES_SRV/Attachments" 
+						uploadUrl="/sap/opu/odata/sap/ZEMPLOYEES_SRV/Attachments"
 						items="{employeeModels>UserToAttachment}"
-						beforeUploadStarts=".onBeforeUploadStarts" 
-						afterItemAdded=".onAfterItemAdded"   
+						beforeUploadStarts=".onBeforeUploadStarts"
+						afterItemAdded=".onAfterItemAdded"
 						afterItemRemoved=".onAfterItemRemoved"
 					>
 						<upload:items>
-							<upload:UploadSetItem
-								fileName="{employeeModels>DocName}"     
-							>
-							</upload:UploadSetItem>
+							<upload:UploadSetItem fileName="{employeeModels>DocName}"/>
 						</upload:items>
 					</upload:UploadSet>
 				</IconTabFilter>
