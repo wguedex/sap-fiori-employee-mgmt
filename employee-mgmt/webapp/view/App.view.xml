@@ -44,6 +44,7 @@
                                             sapUiTinyMarginTop 
                                             tileLayout"   
                                      headerImage="sap-icon://signature"
+                                     url="https://eeab236ftrial-dev-employees-approuter.cfapps.us10.hana.ondemand.com"
 		                               press=".onSignSalesOrder" 
                                      frameType= "Auto"> 
 		                              <TileContent id="signSalesOrderContentId" 

@@ -19,7 +19,11 @@ sap.ui.define(
       onLookupEmployee: function (oEvent) {
         let oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("LookupEmployeeRoute");
-      },             
+      }, 
+      
+      onSignSalesOrder: function(oEvent){
+        sap.m.URLHelper.redirect(oEvent.getSource().getUrl(), true);
+      }
 
     });
   } 
