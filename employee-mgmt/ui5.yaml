@@ -30,4 +30,4 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: sapui5.com.employeemgmt
-        ui5Theme: sap_belize
+        ui5Theme: sap_horizon
