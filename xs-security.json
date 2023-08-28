@@ -1,0 +1,31 @@
+{
+  "xsappname": "uaa_employeemgmt",
+  "tenant-mode": "dedicated",
+  "scopes": [
+      {
+          "name": "$XSAPPNAME.Admin",
+          "description": "Admin"
+      }
+  ],
+  "attributes": [],
+  "role-templates": [
+      {
+          "name": "Admin",
+          "description": "generated",
+          "scope-references": [
+              "$XSAPPNAME.Admin"
+          ],
+          "attribute-references": []
+      }
+  ],
+  "oauth2-configuration": {
+      "credential-types": [
+          "binding-secret",
+          "x509"
+      ],
+      "redirect-uris": [
+          "https://*.applicationstudio.cloud.sap/**",
+          "https://825f7bc5trial-dev-sap-fiori-employee-mgmt-approuter.cfapps.us10-001.hana.ondemand.com/login/callback"
+      ]
+  }
+}
